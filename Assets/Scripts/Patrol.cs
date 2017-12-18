@@ -20,7 +20,7 @@ public class Patrol : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () { //very basic waypoint system.
 		if (transform.position == patrolPoints[currentPoint].position)
         {
             currentPoint++;
@@ -38,8 +38,8 @@ public class Patrol : MonoBehaviour {
     {
         if (other.transform.tag == "Player")
         {
-            Instantiate(deathParticles, transform.position, Quaternion.identity);
-            Instantiate(hurtSound, transform.position, Quaternion.identity);
+            Instantiate(deathParticles, transform.position, Quaternion.identity); //explody shit
+            Instantiate(hurtSound, transform.position, Quaternion.identity); //oof
             other.transform.position = spawnPoint;
         }
     }
