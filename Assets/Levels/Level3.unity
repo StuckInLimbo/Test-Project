@@ -262,17 +262,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 65375183809440332, guid: 17e1b708575169f459c6f28fce86a7c8,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114039133147368966, guid: 17e1b708575169f459c6f28fce86a7c8,
-        type: 2}
-      propertyPath: deathParticles
-      value: 
-      objectReference: {fileID: 1213353622673516, guid: 24bbb49c3ece22f40befb271223cfc13,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17e1b708575169f459c6f28fce86a7c8, type: 2}
   m_IsPrefabParent: 0

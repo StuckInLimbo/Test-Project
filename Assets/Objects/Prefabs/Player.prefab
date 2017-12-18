@@ -202,7 +202,7 @@ MonoBehaviour:
   moveSpeed: 10
   deathParticles: {fileID: 1213353622673516, guid: 24bbb49c3ece22f40befb271223cfc13,
     type: 2}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 1007254684481702, guid: 5674363a027b8774da28003046e6bd3a, type: 2}
   areaNum: 0
 --- !u!114 &114706485248813176
 MonoBehaviour:
