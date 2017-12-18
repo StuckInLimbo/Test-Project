@@ -17,14 +17,14 @@ public class PlayerGUI : MonoBehaviour {
 
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(0, 0, 60, 20), "Level 1"))
+        if (GUI.Button(new Rect(0, 0, 60, 20), "Main Menu"))
             SceneManager.LoadScene(0);
-        if (GUI.Button(new Rect(0, 25, 60, 20), "Level 2"))
-            SceneManager.LoadScene(1);
-        if (GUI.Button(new Rect(0, 50, 60, 20), "Quit"))
-        {
-            Application.Quit();
-            print("QUITTING GAME");
-        }     
+        //if (GUI.Button(new Rect(0, 25, 60, 20), "Level 2"))
+        //    SceneManager.LoadScene(1);
+        //if (GUI.Button(new Rect(0, 50, 60, 20), "Quit"))
+        //{
+        //    Application.Quit();
+        //    print("QUITTING GAME");
+        //}     
     }
 }

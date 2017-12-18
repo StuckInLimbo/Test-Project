@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public GameObject deathParticles;
+    public GameObject hurtSound;
     public int areaNum;
 
     private float maxSpeed = 20.0f;
@@ -16,15 +17,9 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        moveSpeed = 7.5f;
+        moveSpeed = 10f;
         spawnPoint = transform.position;
         areaNum = 1;
-        //GameObject wc = GameObject.FindGameObjectWithTag("WorldControl");
-        //Transform wct = wc.transform;
-        //for (int i = 0; i < wct.childCount; i++)
-        //{
-        //    print(wct.GetChild(i));
-        //}
     }
 
     // Update is called once per frame
@@ -53,19 +48,17 @@ public class PlayerMovement : MonoBehaviour
         if(other.transform.tag == "DeathPlane")
         {
             Instantiate(deathParticles, transform.position, Quaternion.identity);
+            Instantiate(hurtSound, transform.position, Quaternion.identity);
             transform.position = spawnPoint;
         }
 
         if(other.transform.tag == "Teleporter")
         {
-            Teleport tp;
-            tp = other.transform.GetComponent<Teleport>();
-            print(tp.teleportSpot.transform.name);
-            transform.position = tp.teleportSpot.transform.position;
+            transform.position = other.transform.GetComponent<Teleport>().teleportSpot.transform.position;
         }
     }
 
-    private void loadArea(int nArea)
+    private void loadArea(int nArea) //this is a fuckin mess, just dont even bother
     {
         GameObject wc = GameObject.FindGameObjectWithTag("WorldControl");
         Transform[] objs = new Transform[wc.transform.childCount];
@@ -91,9 +84,9 @@ public class PlayerMovement : MonoBehaviour
         else
             f2 = fog[1];
         f1.GetComponent<Fog>().active = false;
-        print(f1.name + " " + f1.GetComponent<Fog>().active);
+        //print(f1.name + " " + f1.GetComponent<Fog>().active);
         f2.GetComponent<Fog>().active = true;
-        print(f2.name + " " + f2.GetComponent<Fog>().active);
+        //print(f2.name + " " + f2.GetComponent<Fog>().active);
         transform.position = f1.transform.GetChild(1).transform.position;
         areaNum = f2.GetComponent<Fog>().areaNum;
     }
